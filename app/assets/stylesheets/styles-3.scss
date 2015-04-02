@@ -91,6 +91,7 @@ pre code {
   font-size: 16px;
 }
 /* ======= Header ======= */
+
 .header {
   padding: 10px 0;
   background: #6690b9;
@@ -161,6 +162,18 @@ pre code {
   -o-transition: none;
   font-size: 14px;
   padding: 15px 10px;
+}
+.header .main-nav .nav .nav-itempink a {
+  color: #f46fa3;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -o-transition: none;
+  font-size: 18px;
+  padding: 15px 10px;
+  font-weight: bold;
+  outline: none;
+  background: none;
 }
 .header .main-nav .nav .nav-item a:hover {
   color: #2a435c;

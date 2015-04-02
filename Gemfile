@@ -43,6 +43,7 @@ group :development, :test do
   gem 'spring'
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'figaro', '1.0'
 
  group :production do
    gem 'pg'
