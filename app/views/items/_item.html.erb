@@ -3,7 +3,9 @@
          <ul class="list-group">
            <li class="list-group-item">
              <p><%= link_to "",[item.user,item], method: :delete, remote: true,  class: 'glyphicon glyphicon-ok' %>
-             <%= item.name %></p>
+             <%= item.name %> </p>
+            <small><%=item.days_left %> days left</small>
+         
         </li>
     </ul>
   </div>
