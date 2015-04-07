@@ -8,9 +8,7 @@ Bundler.require(*Rails.groups)
 
 module Blocitoff
   class Application < Rails::Application
-     config.assets.paths << Rails.root.join("app", "assets", "plugins","bootstrap","css")
-     config.assets.paths << Rails.root.join("app", "assets", "plugins","prisim")
-     config.assets.paths << Rails.root.join("app", "assets", "plugins","font-awesome","css")
+ 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
