@@ -11,13 +11,18 @@
 
 <br/>
 
+<div class="col-md-8">
 <h2>To-dos</h2>
 <div class='js-items-count'><h4><%= pluralize(@user.items.count, 'item')%></h4></div> 
   <div class='js-items'>
     <%= render partial: 'items/item', collection: @items %>
    </div>
 
+</br>
+
   <div class='new-item'>
    <%= render partial: 'items/form', locals: { user:@user, item: @item} %>
   </div>
+   </div>
+
 
