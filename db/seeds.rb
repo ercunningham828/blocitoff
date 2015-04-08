@@ -14,7 +14,7 @@ require 'faker'
     user: admin,
     name: Faker::Lorem.sentence
 )
-   item.update_attributes!(created_at: rand(10.minutes .. 6.days).ago)
+   item.update_attributes!(created_at: rand(10.minutes .. 8.days).ago)
  end
  items=Item.all
 
