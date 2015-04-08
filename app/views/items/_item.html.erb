@@ -1,7 +1,10 @@
-<div class="media">
+ <%= content_tag :div, class: 'media', id: "item-#{item.id}" do %>
+  <div class='media-body>'
          <ul class="list-group">
            <li class="list-group-item">
-             <%= item.name %>
+             <p><%= link_to "",[item.user,item], method: :delete, remote: true,  class: 'glyphicon glyphicon-ok' %>
+             <%= item.name %></p>
         </li>
     </ul>
-</div>
+  </div>
+<%end%>

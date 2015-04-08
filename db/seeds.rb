@@ -9,7 +9,7 @@ require 'faker'
  admin.skip_confirmation!
  admin.save!
 
- 10.times do 
+ 20.times do 
   item=Item.create!(
     user: admin,
     name: Faker::Lorem.sentence

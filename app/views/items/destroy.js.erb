@@ -1,0 +1,2 @@
+$('#item-' +<%=@item.id %>).hide();
+$('.js-items-count').html("<h4><%= pluralize(@user.items.count, 'item')%></h4>");
