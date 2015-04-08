@@ -8,3 +8,16 @@
      </div>
    </div>
  </div>
+
+<br/>
+
+<h2>To-dos</h2>
+<h4 class='js-comments-count'><%= @items.count %> Total</h4> 
+  <div class='js-items'>
+    <%= render partial: 'items/item', collection: @items %>
+   </div>
+
+  <div class='new-item'>
+   <%= render partial: 'items/form', locals: { user:@user, item: @item} %>
+  </div>
+
