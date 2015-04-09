@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+  get 'lists/show'
+
   devise_for :users
   
-  resources :users, only: [:show] do
+  resources :users, only: [:update,:show]
+
+  resources :lists do
     resources :items, only: [:create,:destroy]
   end
 
