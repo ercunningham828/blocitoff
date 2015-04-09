@@ -3,7 +3,7 @@
    <div class="col-md-8">
      <div class="media">
        <div class="media-body">
-         <h2 class="media-heading">Hello <%= @user.name %>!</h2>
+         <h2 class="media-heading"><%= image_tag( current_user.avatar.profile.url ) %>  Hello <%= @user.name %>!  </h2>
        </div>
      </div>
    </div>
@@ -11,13 +11,16 @@
 
 <br/>
 
-<h2>To-dos</h2>
-<div class='js-items-count'><h4><%= pluralize(@user.items.count, 'item')%></h4></div> 
-  <div class='js-items'>
-    <%= render partial: 'items/item', collection: @items %>
+
+<div class="col-md-8">
+<div><h2><%= pluralize(@user.lists.count, ' todo list')%></h2></div> 
+</br>
+  <div class="row">
+   <div class="col-md-8">
+      <%=render @lists%>
    </div>
 
-  <div class='new-item'>
-   <%= render partial: 'items/form', locals: { user:@user, item: @item} %>
-  </div>
+   <div class="col-md-4">
+       <%= link_to "New List", new_list_path, class: 'btn btn-success' %>
+   </div>
 

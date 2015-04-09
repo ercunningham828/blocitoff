@@ -1,0 +1,11 @@
+<div class="media">
+     <div class="media-body">
+        <h4 class="media-heading">
+            <%= link_to list.name, list %>
+          </h4>
+         <small>
+        <%= list.description %>
+         <span class="badge"><%= pluralize(list.items.count, 'item')%></span>
+    </small>
+  </div>
+</div>

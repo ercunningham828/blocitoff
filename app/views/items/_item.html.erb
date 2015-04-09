@@ -2,10 +2,9 @@
   <div class='media-body>'
          <ul class="list-group">
            <li class="list-group-item">
-             <p><%= link_to "",[item.user,item], method: :delete, remote: true,  class: 'glyphicon glyphicon-ok' %>
-             <%= item.name %> </p>
-            <small><%=item.days_left %> days left</small>
-         
+             <%= link_to "",[@list,item], method: :delete, remote: true,  class: 'glyphicon glyphicon-unchecked',id: "checkbox-#{item.id}" %>
+              <body id: "strike-<%=item.id%>" ><%=item.name%></body>
+               <span class="badge"><%=pluralize(item.days_left, 'day')%> left</span>
         </li>
     </ul>
   </div>

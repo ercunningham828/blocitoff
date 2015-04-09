@@ -1,8 +1,10 @@
 class ItemsController < ApplicationController
   def create
     @user=current_user
+    @list=List.find(params[:list_id])
     @item = current_user.items.build(item_params)
     @item.user=@user
+    @item.list=@list
     @new_item=Item.new
 
     if @item.save
@@ -19,8 +21,8 @@ class ItemsController < ApplicationController
 
   def destroy
      @user = current_user
-     @item = Item.find(params[:id])
-     @item.user=@user
+     @list = List.find(params[:list_id])
+     @item = @list.items.find(params[:id])
 
     if @item.destroy
       flash[:notice] = "Item was removed."
@@ -31,6 +33,11 @@ class ItemsController < ApplicationController
      respond_to do |format|
        format.html
        format.js
+     end
+
+    
+     def item_params
+      params.require(:item).permit(:name)
      end
   end
 
