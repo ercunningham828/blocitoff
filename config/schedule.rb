@@ -7,7 +7,7 @@
 #
 # set :output, "/path/to/my/cron_log.log"
 #
-every 2.minutes do
+every 1.days do
   rake "todo:delete_items", :environment => 'development'
 end
 #
