@@ -25,6 +25,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
 gem 'active_model_serializers'
+gem 'puma'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
