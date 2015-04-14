@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  namespace :api do
+  get 'items/create'
+  end
+
+  namespace :api do
+  get 'lists/create'
+  end
+
   get 'lists/show'
 
   devise_for :users
@@ -19,7 +27,15 @@ Rails.application.routes.draw do
   root to: 'welcome#index'
 
   namespace :api, defaults: { format: :json } do
-     resources :users
-   end
+     resources :users do
+      resources :lists 
+    end
+
+    resources :lists, only: [] do
+      resources :items, only: [:create]
+    end
+
+    resources :items, only: [:destroy]
+  end
 
 end
