@@ -2,6 +2,7 @@ class Api::UsersController < ApiController
   before_action :authenticated?
   def create
     user = User.new(user_params)
+    raise "not authorized" unless UserPolicy.new(@logged_user, user).create?
      if user.save
        render json: user.to_json
      else
@@ -17,6 +18,7 @@ class Api::UsersController < ApiController
  def destroy
      begin
        user = User.find(params[:id])
+        raise "not authorized" unless UserPolicy.new(@logged_user, user).destroy?
        user.destroy
       render json: {}, status: :no_content
      rescue ActiveRecord::RecordNotFound

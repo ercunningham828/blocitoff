@@ -5,6 +5,7 @@ require 'faker'
    name:     'Admin User',
    email:    'admin@example.com',
    password: 'helloworld',
+   role: 'admin'
  )
  admin.skip_confirmation!
  admin.save!
@@ -34,7 +35,7 @@ require 'faker'
     name: Faker::Lorem.sentence,
     list: lists.sample
 )
-   item.update_attributes!(created_at: rand(10.minutes .. 6.days).ago)
+   item.update_attributes!(created_at: rand(10.minutes .. 6.days).ago, user: item.list.user)
  end
  items=Item.all
 
